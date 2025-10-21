@@ -1,0 +1,170 @@
+[
+  {
+    "day": 1,
+    "type": "text",
+    "title": "Welcome to Advent! 🎄",
+    "content": "Welcome to your personal Advent calendar 2025! A new surprise awaits you every day. Enjoy this special season and let yourself be enchanted!"
+  },
+  {
+    "day": 2,
+    "type": "image",
+    "title": "Winter Magic ❄️",
+    "content": "The first snowflakes are falling...",
+    "imageUrl": "https://images.unsplash.com/photo-1546450726-4d3eb86ba3e4?w=800&q=80"
+  },
+  {
+    "day": 3,
+    "type": "voucher",
+    "title": "Cozy Evening 🍵",
+    "content": "Redeem this for a relaxing evening with hot chocolate and cookies!",
+    "voucherCode": "XMAS-RELAX-2025",
+    "voucherValidUntil": "December 24, 2025"
+  },
+  {
+    "day": 4,
+    "type": "link",
+    "title": "Christmas Music 🎵",
+    "content": "A playlist full of festive sounds to relax and sing along!",
+    "linkUrl": "https://open.spotify.com/playlist/37i9dQZF1DX0Yxoavh5qJV"
+  },
+  {
+    "day": 5,
+    "type": "text",
+    "title": "St. Nicholas Eve 🎅",
+    "content": "Tomorrow is St. Nicholas Day! Did you polish your shoes? Saint Nicholas will surely bring something delicious!"
+  },
+  {
+    "day": 6,
+    "type": "image",
+    "title": "St. Nicholas Day 🎅🥾",
+    "content": "¡San Nicolás estuvo aquí! St. Nicholas was here!",
+    "imageUrl": "https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=800&q=80"
+  },
+  {
+    "day": 7,
+    "type": "voucher",
+    "title": "Movie Night 🎬🍿",
+    "content": "Redeem this for a cozy movie night with your favorite film and popcorn!",
+    "voucherCode": "MOVIE-NIGHT-25",
+    "voucherValidUntil": "December 31, 2025"
+  },
+  {
+    "day": 8,
+    "type": "text",
+    "title": "Día de la Inmaculada Concepción 🙏",
+    "content": "A special day in Mexico! While Germany celebrates with cookies, Mexico honors the Immaculate Conception. Let's bake some Polvorones (Mexican wedding cookies) together! 🇲🇽"
+  },
+  {
+    "day": 9,
+    "type": "link",
+    "title": "Winter & Mexican Recipes 🌮🍪",
+    "content": "Discover delicious recipes - from traditional German Christmas cookies to Mexican holiday treats like Buñuelos and Tamales!",
+    "linkUrl": "https://www.mexicoinmykitchen.com/mexican-christmas-recipes/"
+  },
+  {
+    "day": 10,
+    "type": "image",
+    "title": "Candlelight Warmth 🕯️",
+    "content": "Time for reflection and coziness...",
+    "imageUrl": "https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=800&q=80"
+  },
+  {
+    "day": 11,
+    "type": "voucher",
+    "title": "Spa Day 🛁💆‍♀️",
+    "content": "Treat yourself to a relaxing wellness day with a bubble bath and face mask!",
+    "voucherCode": "WELLNESS-2025",
+    "voucherValidUntil": "January 31, 2026"
+  },
+  {
+    "day": 12,
+    "type": "text",
+    "title": "Día de la Virgen de Guadalupe 🌹",
+    "content": "Happy Day of Our Lady of Guadalupe! 🇲🇽 One of Mexico's most important holidays! Today we celebrate your beautiful culture and traditions. You're halfway through the calendar - the best is yet to come!"
+  },
+  {
+    "day": 13,
+    "type": "image",
+    "title": "Snowy Landscape 🏔️",
+    "content": "Nature in its winter dress",
+    "imageUrl": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&q=80"
+  },
+  {
+    "day": 14,
+    "type": "link",
+    "title": "Virtual Christmas Markets �",
+    "content": "Explore the most beautiful Christmas markets in Europe and Posada celebrations in Mexico!",
+    "linkUrl": "https://www.google.com/maps"
+  },
+  {
+    "day": 15,
+    "type": "voucher",
+    "title": "Breakfast in Bed 🥐☕",
+    "content": "Let yourself be pampered with a delicious breakfast in bed!",
+    "voucherCode": "BREAKFAST-LUXURY",
+    "voucherValidUntil": "February 28, 2026"
+  },
+  {
+    "day": 16,
+    "type": "text",
+    "title": "Las Posadas Begin! �🕯️",
+    "content": "The first night of Las Posadas! 🇲🇽 For 9 nights, Mexicans reenact Mary and Joseph's journey to Bethlehem. A beautiful tradition blending with the German Christmas spirit! ¡Felices Posadas!"
+  },
+  {
+    "day": 17,
+    "type": "image",
+    "title": "Christmas Tree Decorating 🎄✨",
+    "content": "It's almost time! German traditions meet Mexican sparkle!",
+    "imageUrl": "https://images.unsplash.com/photo-1512916206820-91ddef6fb6d6?w=800&q=80"
+  },
+  {
+    "day": 18,
+    "type": "link",
+    "title": "DIY Gift Ideas 🎁",
+    "content": "Creative ideas for handmade Christmas gifts - inspired by both cultures!",
+    "linkUrl": "https://www.pinterest.com/search/pins/?q=diy%20christmas%20gifts"
+  },
+  {
+    "day": 19,
+    "type": "voucher",
+    "title": "Game Night 🎮🎲",
+    "content": "An evening full of fun - together or solo!",
+    "voucherCode": "GAME-ON-2025",
+    "voucherValidUntil": "January 15, 2026"
+  },
+  {
+    "day": 20,
+    "type": "text",
+    "title": "Only 4 Days Left! ⭐",
+    "content": "Christmas Eve is getting closer! The anticipation is growing! In Mexico, preparations for Noche Buena are in full swing! 🎉"
+  },
+  {
+    "day": 21,
+    "type": "image",
+    "title": "Winter Evening 🌙",
+    "content": "The most peaceful time of the year",
+    "imageUrl": "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=800&q=80"
+  },
+  {
+    "day": 22,
+    "type": "voucher",
+    "title": "Dinner Date 🍽️🌮",
+    "content": "Let's go out for dinner together and enjoy the evening! Mexican, German, or something completely different?",
+    "voucherCode": "DINNER-SPECIAL",
+    "voucherValidUntil": "March 31, 2026"
+  },
+  {
+    "day": 23,
+    "type": "text",
+    "title": "Tomorrow is the Big Day! 🎅🎄",
+    "content": "Christmas Eve is tomorrow! In Mexico, it's Noche Buena - a night of celebration, family, and delicious food like Bacalao and Ponche! Enjoy the final preparations for this magical night! 🇲🇽🇩🇪"
+  },
+  {
+    "day": 24,
+    "type": "voucher",
+    "title": "¡Feliz Navidad! Merry Christmas! 🎄🎁",
+    "content": "This is your main gift! Let yourself be surprised and enjoy the holidays. From Germany to Mexico - love knows no borders! Te quiero mucho! ❤️🇲🇽🇩🇪",
+    "voucherCode": "XMAS-SPECIAL-2025",
+    "voucherValidUntil": "January 6, 2026"
+  }
+]
