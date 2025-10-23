@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarEntry } from '../types';
 import { isDoorUnlocked } from '../utils/dateUtils';
@@ -193,7 +192,6 @@ export default function DoorCard({ entry, isOpened, onOpen, previewMode }: DoorC
   
   // Check if this is a special highlighted day
   const isSpecialDay = [6, 8, 12, 16, 23, 24].includes(entry.day);
-  const isMostImportant = [12, 24].includes(entry.day); // Guadalupe & Noche Buena
 
   const handleClick = () => {
     if (unlocked) {
