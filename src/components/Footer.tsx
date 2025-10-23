@@ -2,7 +2,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 py-12 border-t-2 border-red-200 dark:border-red-900 bg-gradient-to-b from-transparent via-red-50/30 to-green-50/30 dark:from-transparent dark:via-red-950/20 dark:to-green-950/20 relative overflow-hidden">
+    <footer className="mt-16 py-12 border-t-2 border-rose-200 dark:border-rose-900 bg-gradient-to-b from-transparent via-rose-50/30 to-emerald-50/30 dark:from-transparent dark:via-rose-950/20 dark:to-emerald-950/20 relative overflow-hidden">
       {/* Decorative snow at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/40 to-transparent dark:from-white/10 pointer-events-none"></div>
       
@@ -13,24 +13,24 @@ export default function Footer() {
             key={i}
             className="w-2 h-2 rounded-full animate-pulse"
             style={{
-              backgroundColor: ['#ef4444', '#22c55e', '#eab308', '#3b82f6'][i % 4],
+              backgroundColor: ['#ffb3ba', '#baffc9', '#ffffba', '#bae1ff'][i % 4],
               animationDelay: `${i * 0.2}s`,
-              boxShadow: `0 0 8px ${['#ef4444', '#22c55e', '#eab308', '#3b82f6'][i % 4]}`,
+              boxShadow: `0 0 8px ${['#ffb3ba', '#baffc9', '#ffffba', '#bae1ff'][i % 4]}`,
             }}
           />
         ))}
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
-        <p className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-red-600 via-green-600 to-red-600 dark:from-red-400 dark:via-green-400 dark:to-red-400 text-transparent bg-clip-text">
+        <p className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-rose-400 via-emerald-400 to-rose-400 dark:from-rose-300 dark:via-emerald-300 dark:to-rose-300 text-transparent bg-clip-text">
           ¡Feliz Navidad, mi amor!
         </p>
         
-        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-2">
+        <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-2">
           Merry Christmas to the most wonderful person in my life
         </p>
         
-        <p className="text-sm md:text-base text-rose-600 dark:text-rose-400 mb-4 italic">
+        <p className="text-sm md:text-base text-rose-400 dark:text-rose-300 mb-4 italic">
           Every day with you is a gift. Te amo con todo mi corazón
         </p>
         

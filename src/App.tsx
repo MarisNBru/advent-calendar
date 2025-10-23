@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CalendarEntry } from './types';
@@ -26,13 +26,31 @@ function App() {
 
     // Secret key listener for "#" key
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === '#') {
-        setSecretMode(prev => !prev);
-        console.log('🎄 Secret mode toggled!');
+      // Check for # key (works with different keyboard layouts)
+      if (e.key === '#' || e.key === 'Shift+3' || (e.shiftKey && e.key === '3')) {
+        e.preventDefault();
+        setSecretMode(prev => {
+          const newMode = !prev;
+          console.log('🎄 Secret mode:', newMode ? 'ACTIVATED' : 'DEACTIVATED');
+          return newMode;
+        });
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Additional check with keydown event for better compatibility
+      if (e.shiftKey && e.code === 'Digit3') {
+        e.preventDefault();
+        setSecretMode(prev => {
+          const newMode = !prev;
+          console.log('🎄 Secret mode:', newMode ? 'ACTIVATED' : 'DEACTIVATED');
+          return newMode;
+        });
       }
     };
 
     window.addEventListener('keypress', handleKeyPress);
+    window.addEventListener('keydown', handleKeyDown);
 
     // Load calendar data
     const loadData = async () => {
@@ -61,7 +79,10 @@ function App() {
 
     loadData();
 
-    return () => window.removeEventListener('keypress', handleKeyPress);
+    return () => {
+      window.removeEventListener('keypress', handleKeyPress);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   const handleDoorClick = (entry: CalendarEntry) => {

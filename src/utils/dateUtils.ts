@@ -1,4 +1,4 @@
-import { utcToZonedTime, format } from 'date-fns-tz';
+import { zonedTimeToUtc, utcToZonedTime, format } from 'date-fns-tz';
 
 const TIMEZONE = 'Europe/Berlin';
 

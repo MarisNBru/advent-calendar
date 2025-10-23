@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Header() {
   return (
-    <header className="text-center py-12 px-4 relative overflow-hidden bg-gradient-to-b from-red-50/30 via-transparent to-transparent dark:from-red-950/20">
+    <header className="text-center py-12 px-4 relative overflow-hidden bg-gradient-to-b from-rose-50/40 via-transparent to-transparent dark:from-rose-950/15">
       {/* Decorative snowflakes - more winter wonderland feel */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(30)].map((_, i) => (
@@ -58,8 +58,8 @@ export default function Header() {
               key={`light-${i}`}
               className="w-3 h-3 rounded-full"
               style={{
-                backgroundColor: ['#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff'][i % 5],
-                boxShadow: `0 0 10px ${['#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff'][i % 5]}`,
+                backgroundColor: ['#ffb3ba', '#bae1ff', '#ffffba', '#baffc9', '#ffc9de'][i % 5],
+                boxShadow: `0 0 10px ${['#ffb3ba', '#bae1ff', '#ffffba', '#baffc9', '#ffc9de'][i % 5]}`,
               }}
               animate={{
                 opacity: [0.4, 1, 0.4],
@@ -75,7 +75,7 @@ export default function Header() {
       </div>
 
       <motion.h1 
-        className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-500 to-green-600 dark:from-red-400 dark:via-pink-400 dark:to-green-400 mb-4 drop-shadow-lg relative z-10 mt-8"
+        className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-300 to-emerald-400 dark:from-rose-300 dark:via-pink-200 dark:to-emerald-300 mb-4 drop-shadow-lg relative z-10 mt-8"
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ 
@@ -85,7 +85,7 @@ export default function Header() {
           duration: 0.8
         }}
         style={{
-          textShadow: '0 0 40px rgba(220, 38, 38, 0.3), 0 4px 6px rgba(0,0,0,0.1)'
+          textShadow: '0 0 40px rgba(251, 207, 232, 0.4), 0 4px 6px rgba(0,0,0,0.1)'
         }}
       >
         Aleida's Advent Calendar
@@ -97,13 +97,13 @@ export default function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        <p className="text-lg md:text-2xl text-gray-700 dark:text-gray-300 font-medium mb-2">
+        <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-2">
           24 Days of Love, Surprises & Christmas Magic
         </p>
-        <p className="text-base md:text-lg text-rose-600 dark:text-rose-400 font-semibold mb-1">
+        <p className="text-base md:text-lg text-rose-400 dark:text-rose-300 font-semibold mb-1">
           Para mi amor, mein Schatz, my baby
         </p>
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 italic">
+        <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 italic">
           Con todo mi corazón, de tu niño que te ama
         </p>
       </motion.div>
