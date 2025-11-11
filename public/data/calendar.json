@@ -10,7 +10,7 @@
     "type": "image",
     "title": "Winter Magic ❄️",
     "content": "The first snowflakes are falling...",
-    "imageUrl": "https://images.unsplash.com/photo-1546450726-4d3eb86ba3e4?w=800&q=80"
+    "imageUrl": "pics/2.jpeg"
   },
   {
     "day": 3,
@@ -22,10 +22,10 @@
   },
   {
     "day": 4,
-    "type": "link",
+    "type": "image",
     "title": "Christmas Music 🎵",
-    "content": "A playlist full of festive sounds to relax and sing along!",
-    "linkUrl": "https://open.spotify.com/playlist/37i9dQZF1DX0Yxoavh5qJV"
+    "content": "Let the festive melodies fill your heart!",
+    "imageUrl": "pics/4.jpeg"
   },
   {
     "day": 5,
@@ -38,7 +38,7 @@
     "type": "image",
     "title": "St. Nicholas Day 🎅🥾",
     "content": "¡San Nicolás estuvo aquí! St. Nicholas was here!",
-    "imageUrl": "https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?w=800&q=80"
+    "imageUrl": "pics/6.jpeg"
   },
   {
     "day": 7,
@@ -50,9 +50,10 @@
   },
   {
     "day": 8,
-    "type": "text",
+    "type": "image",
     "title": "Día de la Inmaculada Concepción 🙏",
-    "content": "A special day in Mexico! While Germany celebrates with cookies, Mexico honors the Immaculate Conception. Let's bake some Polvorones (Mexican wedding cookies) together! 🇲🇽"
+    "content": "A special day in Mexico! While Germany celebrates with cookies, Mexico honors the Immaculate Conception. Let's bake some Polvorones (Mexican wedding cookies) together! 🇲🇽",
+    "imageUrl": "pics/8.jpeg"
   },
   {
     "day": 9,
@@ -66,7 +67,7 @@
     "type": "image",
     "title": "Candlelight Warmth 🕯️",
     "content": "Time for reflection and coziness...",
-    "imageUrl": "https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=800&q=80"
+    "imageUrl": "pics/10.jpeg"
   },
   {
     "day": 11,
@@ -78,21 +79,22 @@
   },
   {
     "day": 12,
-    "type": "text",
+    "type": "image",
     "title": "Día de la Virgen de Guadalupe 🌹",
-    "content": "Happy Day of Our Lady of Guadalupe! 🇲🇽 One of Mexico's most important holidays! Today we celebrate your beautiful culture and traditions. You're halfway through the calendar - the best is yet to come!"
+    "content": "Happy Day of Our Lady of Guadalupe! 🇲🇽 One of Mexico's most important holidays! Today we celebrate your beautiful culture and traditions. You're halfway through the calendar - the best is yet to come!",
+    "imageUrl": "pics/12.jpeg"
   },
   {
     "day": 13,
     "type": "image",
     "title": "Snowy Landscape 🏔️",
     "content": "Nature in its winter dress",
-    "imageUrl": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&q=80"
+    "imageUrl": "pics/13.jpeg"
   },
   {
     "day": 14,
     "type": "link",
-    "title": "Virtual Christmas Markets �",
+    "title": "Virtual Christmas Markets 🎪",
     "content": "Explore the most beautiful Christmas markets in Europe and Posada celebrations in Mexico!",
     "linkUrl": "https://www.google.com/maps"
   },
@@ -106,58 +108,59 @@
   },
   {
     "day": 16,
-    "type": "text",
-    "title": "Las Posadas Begin! �🕯️",
-    "content": "The first night of Las Posadas! 🇲🇽 For 9 nights, Mexicans reenact Mary and Joseph's journey to Bethlehem. A beautiful tradition blending with the German Christmas spirit! ¡Felices Posadas!"
+    "type": "image",
+    "title": "Las Posadas Begin! 🏠🕯️",
+    "content": "The first night of Las Posadas! 🇲🇽 For 9 nights, Mexicans reenact Mary and Joseph's journey to Bethlehem. A beautiful tradition blending with the German Christmas spirit! ¡Felices Posadas!",
+    "imageUrl": "pics/16.jpeg"
   },
   {
     "day": 17,
     "type": "image",
     "title": "Christmas Tree Decorating 🎄✨",
     "content": "It's almost time! German traditions meet Mexican sparkle!",
-    "imageUrl": "https://images.unsplash.com/photo-1512916206820-91ddef6fb6d6?w=800&q=80"
+    "imageUrl": "pics/11.jpeg"
   },
   {
     "day": 18,
-    "type": "link",
+    "type": "image",
     "title": "DIY Gift Ideas 🎁",
     "content": "Creative ideas for handmade Christmas gifts - inspired by both cultures!",
-    "linkUrl": "https://www.pinterest.com/search/pins/?q=diy%20christmas%20gifts"
+    "imageUrl": "pics/3.jpeg"
   },
   {
     "day": 19,
-    "type": "voucher",
+    "type": "image",
     "title": "Game Night 🎮🎲",
     "content": "An evening full of fun - together or solo!",
-    "voucherCode": "GAME-ON-2025",
-    "voucherValidUntil": "January 15, 2026"
+    "imageUrl": "pics/5.jpeg"
   },
   {
     "day": 20,
-    "type": "text",
+    "type": "image",
     "title": "Only 4 Days Left! ⭐",
-    "content": "Christmas Eve is getting closer! The anticipation is growing! In Mexico, preparations for Noche Buena are in full swing! 🎉"
+    "content": "Christmas Eve is getting closer! The anticipation is growing! In Mexico, preparations for Noche Buena are in full swing! 🎉",
+    "imageUrl": "pics/16.jpeg"
   },
   {
     "day": 21,
     "type": "image",
     "title": "Winter Evening 🌙",
-    "content": "The most peaceful time of the year",
-    "imageUrl": "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=800&q=80"
+    "content": "The most peaceful time of the year - enjoy a cozy evening!",
+    "imageUrl": "pics/9.jpeg"
   },
   {
     "day": 22,
-    "type": "voucher",
+    "type": "image",
     "title": "Dinner Date 🍽️🌮",
     "content": "Let's go out for dinner together and enjoy the evening! Mexican, German, or something completely different?",
-    "voucherCode": "DINNER-SPECIAL",
-    "voucherValidUntil": "March 31, 2026"
+    "imageUrl": "pics/14.jpeg"
   },
   {
     "day": 23,
-    "type": "text",
+    "type": "image",
     "title": "Tomorrow is the Big Day! 🎅🎄",
-    "content": "Christmas Eve is tomorrow! In Mexico, it's Noche Buena - a night of celebration, family, and delicious food like Bacalao and Ponche! Enjoy the final preparations for this magical night! 🇲🇽🇩🇪"
+    "content": "Christmas Eve is tomorrow! In Mexico, it's Noche Buena - a night of celebration, family, and delicious food like Bacalao and Ponche! Enjoy the final preparations for this magical night! 🇲🇽🇩🇪",
+    "imageUrl": "pics/15.jpeg"
   },
   {
     "day": 24,
