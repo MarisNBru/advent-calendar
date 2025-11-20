@@ -100,10 +100,40 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-green-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-red-600 mx-auto mb-4"></div>
-          <p className="text-xl text-gray-700 dark:text-gray-300">Loading Advent Calendar...</p>
+      <div className="min-h-screen flex items-center justify-center" style={{
+        backgroundImage: 'url("/pics/fireplace-room.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="text-center p-10 rounded-3xl" style={{
+          background: 'rgba(255, 248, 220, 0.95)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), inset 0 2px 20px rgba(212, 175, 55, 0.3)'
+        }}>
+          <motion.div
+            className="w-24 h-24 mx-auto mb-8 relative"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          >
+            <div className="absolute inset-0 rounded-full" style={{
+              border: '6px solid rgba(212, 175, 55, 0.4)',
+            }}></div>
+            <div className="absolute inset-0 rounded-full" style={{
+              borderTop: '6px solid #D4AF37',
+              filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.8))'
+            }}></div>
+          </motion.div>
+          <p className="text-3xl font-bold mb-3" style={{
+            fontFamily: "'Crimson Text', serif",
+            color: '#8B2E2E',
+            textShadow: '3px 3px 6px rgba(0,0,0,0.3), 0 0 20px rgba(212, 175, 55, 0.5)'
+          }}>Loading Your Advent Calendar...</p>
+          <p className="text-lg italic" style={{
+            fontFamily: "'Merriweather', serif",
+            color: '#6B5B4C',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
+          }}>Preparing the magic...</p>
         </div>
       </div>
     );
@@ -111,13 +141,34 @@ function App() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-green-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="text-center max-w-md p-8 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
-          <svg className="w-16 h-16 text-red-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Error</h2>
-          <p className="text-gray-700 dark:text-gray-300">{error}</p>
+      <div className="min-h-screen flex items-center justify-center" style={{
+        backgroundImage: 'url("/pics/fireplace-room.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="text-center max-w-md p-12 rounded-3xl" style={{
+          background: 'rgba(255, 248, 220, 0.95)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), inset 0 2px 20px rgba(212, 175, 55, 0.3)',
+          border: '5px solid #D4AF37'
+        }}>
+          <div className="text-7xl mb-6" style={{
+            filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.3))'
+          }}>🎄</div>
+          <h2 className="text-4xl font-bold mb-4" style={{
+            fontFamily: "'Crimson Text', serif",
+            color: '#8B2E2E',
+            textShadow: '2px 2px 0 #D4AF37, 4px 4px 8px rgba(139, 46, 46, 0.3)'
+          }}>Oops!</h2>
+          <p className="text-xl leading-relaxed mb-4" style={{
+            fontFamily: "'Merriweather', serif",
+            color: '#6B5B4C'
+          }}>{error}</p>
+          <div className="text-base italic" style={{
+            fontFamily: "'Merriweather', serif",
+            color: '#8B7355'
+          }}>Please try refreshing the page</div>
         </div>
       </div>
     );
@@ -125,93 +176,12 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors relative overflow-hidden">
-        {/* Animated winter wonderland background */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Falling snowflakes across entire page */}
-          {[...Array(40)].map((_, i) => (
-            <motion.div
-              key={`snow-${i}`}
-              className="absolute text-white opacity-30"
-              style={{
-                left: `${Math.random() * 100}%`,
-                fontSize: `${Math.random() * 10 + 10}px`,
-              }}
-              initial={{ y: -50, rotate: 0 }}
-              animate={{
-                y: ['0vh', '110vh'],
-                rotate: [0, 360],
-                x: [0, Math.random() * 100 - 50],
-              }}
-              transition={{
-                duration: Math.random() * 10 + 20,
-                repeat: Infinity,
-                delay: Math.random() * 5,
-                ease: 'linear',
-              }}
-            >
-              ❄️
-            </motion.div>
-          ))}
-          
-          {/* Christmas decorations in corners */}
-          <motion.div 
-            className="absolute top-20 left-10 text-6xl opacity-15 dark:opacity-10"
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            🎅
-          </motion.div>
-          <motion.div 
-            className="absolute top-40 right-20 text-5xl opacity-15 dark:opacity-10"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            ⛄
-          </motion.div>
-          <motion.div 
-            className="absolute bottom-40 left-20 text-7xl opacity-15 dark:opacity-10"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            🎁
-          </motion.div>
-          <motion.div 
-            className="absolute bottom-20 right-32 text-6xl opacity-15 dark:opacity-10"
-            animate={{ 
-              rotate: [0, 20, -20, 0],
-              opacity: [0.15, 0.25, 0.15]
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            ⭐
-          </motion.div>
-          
-          {/* Subtle sparkles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={`sparkle-${i}`}
-              className="absolute w-1 h-1 bg-yellow-400 rounded-full"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                scale: [0, 1.5, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Magical gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-red-100/20 dark:to-red-950/20 pointer-events-none"></div>
-
+      <div className="min-h-screen relative overflow-hidden" style={{
+        backgroundImage: 'url("/pics/fireplace-room.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="container mx-auto px-4 py-8 relative z-10">
           <Header />
 
@@ -219,7 +189,13 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-4xl mx-auto mb-6 p-5 bg-gradient-to-r from-yellow-100 via-amber-100 to-yellow-100 dark:from-yellow-900/30 dark:via-amber-900/30 dark:to-yellow-900/30 border-2 border-yellow-400 dark:border-yellow-600 rounded-2xl shadow-2xl text-center relative overflow-hidden"
+              className="max-w-4xl mx-auto mb-6 p-6 rounded-2xl shadow-2xl text-center relative overflow-hidden"
+              style={{
+                background: 'rgba(255, 248, 220, 0.95)',
+                backdropFilter: 'blur(10px)',
+                border: '4px solid #D4AF37',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 2px 10px rgba(212, 175, 55, 0.3)'
+              }}
             >
               {/* Animated sparkles inside banner */}
               <div className="absolute inset-0 pointer-events-none">
@@ -246,14 +222,24 @@ function App() {
                 ))}
               </div>
               
-              <p className="text-yellow-900 dark:text-yellow-200 font-bold text-lg flex items-center justify-center gap-2 relative z-10">
-                {secretMode ? 'Secret Mode Active!' : 'Preview Mode Active'}
+              <p className="font-bold text-xl flex items-center justify-center gap-2 relative z-10" style={{
+                fontFamily: "'Crimson Text', serif",
+                color: '#8B2E2E',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
+              }}>
+                {secretMode ? '✨ Secret Mode Active ✨' : '🎁 Preview Mode Active 🎁'}
               </p>
-              <p className="text-yellow-800 dark:text-yellow-300 mt-2 relative z-10">
+              <p className="mt-3 relative z-10 text-lg" style={{
+                fontFamily: "'Merriweather', serif",
+                color: '#6B5B4C'
+              }}>
                 All doors are unlocked for you
               </p>
               {secretMode && (
-                <p className="text-sm text-yellow-700 dark:text-yellow-400 mt-2 italic relative z-10">
+                <p className="text-sm mt-3 italic relative z-10" style={{
+                  fontFamily: "'Merriweather', serif",
+                  color: '#8B7355'
+                }}>
                   Press "#" again to return to normal mode
                 </p>
               )}

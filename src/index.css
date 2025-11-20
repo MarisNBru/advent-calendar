@@ -2,14 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google Fonts - Storybook-style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:wght@300;400;700;900&family=Caveat:wght@400;500;600;700&display=swap');
+
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  line-height: 1.5;
+  /* Storybook warm color palette - inspired by cozy fireplace scene */
+  --color-fireplace-red: #8B2E2E;
+  --color-warm-orange: #D4691C;
+  --color-golden-glow: #D4AF37;
+  --color-forest-green: #2C5F2D;
+  --color-deep-wood: #3E2723;
+  --color-cream: #FFF8DC;
+  --color-warm-beige: #F5E6D3;
+  
+  font-family: 'Merriweather', 'Georgia', serif;
+  line-height: 1.7;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: light;
   
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,6 +37,12 @@
 body {
   margin: 0;
   min-height: 100vh;
+  background-image: url('/pics/fireplace-room.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--color-deep-wood);
 }
 
 #root {
@@ -34,10 +50,11 @@ body {
   min-height: 100vh;
 }
 
-/* Focus visible for accessibility */
+/* Focus visible for accessibility - warm storybook style */
 *:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 3px solid var(--color-golden-glow);
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
 }
 
 /* Smooth scrolling */
@@ -45,31 +62,31 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for dark mode */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #1f2937;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 5px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
-  }
+/* Custom scrollbar - warm wooden style */
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-/* Custom animations */
+::-webkit-scrollbar-track {
+  background: var(--color-warm-beige);
+  border-left: 1px solid rgba(139, 46, 46, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-fireplace-red), var(--color-warm-orange));
+  border-radius: 6px;
+  border: 2px solid var(--color-warm-beige);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-warm-orange), var(--color-golden-glow));
+}
+
+/* Custom animations - Storybook style */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -78,7 +95,7 @@ html {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.8s ease-out;
 }
 
 @keyframes shimmer {
@@ -91,12 +108,76 @@ html {
 }
 
 .animate-shimmer {
-  animation: shimmer 2s infinite linear;
+  animation: shimmer 3s infinite linear;
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(212, 175, 55, 0.4) 50%,
     transparent 100%
   );
-  background-size: 1000px 100%;
+  background-size: 2000px 100%;
+}
+
+/* Fireplace glow animation */
+@keyframes fireGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(212, 105, 28, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(212, 105, 28, 0.6);
+  }
+}
+
+.animate-fireGlow {
+  animation: fireGlow 2s ease-in-out infinite;
+}
+
+/* Falling snow - gentle storybook style */
+@keyframes gentleSnowfall {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  animation: gentleSnowfall linear infinite;
+}
+
+/* Storybook page texture */
+.paper-texture {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(139, 46, 46, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(139, 46, 46, 0.03) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(44, 95, 45, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(44, 95, 45, 0.03) 3px
+    );
+  background-color: var(--color-warm-beige);
+}
+
+/* Warm glow effect for interactive elements */
+.warm-glow {
+  box-shadow: 
+    0 4px 20px rgba(212, 105, 28, 0.2),
+    0 0 40px rgba(212, 175, 55, 0.1),
+    inset 0 2px 10px rgba(255, 248, 220, 0.5);
 }

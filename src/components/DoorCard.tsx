@@ -9,80 +9,82 @@ interface DoorCardProps {
   previewMode: boolean;
 }
 
-// Special day themes with PASTEL COLORS and Mexican traditions prioritized
+// Storybook illustrated themes with warm Christmas colors
 const getThemeForDay = (day: number, unlocked: boolean) => {
   const themes: Record<number, {
-    unlocked: { gradient: string; emoji: string; pattern?: string };
-    locked: { gradient: string; emoji: string; pattern?: string };
+    unlocked: { gradient: string; emoji: string; pattern?: string; border: string };
+    locked: { gradient: string; emoji: string; pattern?: string; border: string };
   }> = {
     1: {
-      unlocked: { gradient: 'from-rose-300 via-emerald-300 to-rose-300', emoji: '🎄', pattern: 'advent' },
-      locked: { gradient: 'from-gray-300 via-gray-350 to-gray-400', emoji: '🎄', pattern: 'advent' }
+      unlocked: { gradient: 'from-orange-700 via-red-800 to-orange-900', emoji: '🎄', pattern: 'advent', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎄', pattern: 'advent', border: '#8B7355' }
     },
     6: { // St. Nicholas Day - German tradition
-      unlocked: { gradient: 'from-amber-300 via-rose-300 to-amber-300', emoji: '🎅', pattern: 'nicholas' },
-      locked: { gradient: 'from-gray-300 via-gray-350 to-gray-400', emoji: '🎅', pattern: 'nicholas' }
+      unlocked: { gradient: 'from-red-700 via-orange-800 to-red-900', emoji: '🎅', pattern: 'nicholas', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎅', pattern: 'nicholas', border: '#8B7355' }
     },
     8: { // Día de la Inmaculada Concepción - Mexican tradition
-      unlocked: { gradient: 'from-sky-300 via-blue-200 to-sky-300', emoji: '🙏', pattern: 'maria' },
-      locked: { gradient: 'from-gray-300 via-blue-200 to-gray-400', emoji: '🙏', pattern: 'maria' }
+      unlocked: { gradient: 'from-amber-700 via-orange-700 to-red-800', emoji: '🙏', pattern: 'maria', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🙏', pattern: 'maria', border: '#8B7355' }
     },
     12: { // Día de la Virgen de Guadalupe - Most important Mexican holiday!
-      unlocked: { gradient: 'from-rose-400 via-pink-300 to-rose-400', emoji: '🌹', pattern: 'guadalupe' },
-      locked: { gradient: 'from-gray-300 via-pink-200 to-gray-400', emoji: '🌹', pattern: 'guadalupe' }
+      unlocked: { gradient: 'from-red-800 via-rose-700 to-orange-800', emoji: '🌹', pattern: 'guadalupe', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🌹', pattern: 'guadalupe', border: '#8B7355' }
     },
     16: { // Las Posadas begin - HIGHLIGHTED
-      unlocked: { gradient: 'from-yellow-300 via-orange-300 to-yellow-300', emoji: '🏠', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-orange-200 to-gray-400', emoji: '🏠', pattern: 'posada' }
+      unlocked: { gradient: 'from-amber-600 via-orange-700 to-red-700', emoji: '🏠', pattern: 'posada', border: '#FFB347' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🏠', pattern: 'posada', border: '#8B7355' }
     },
     17: { // Las Posadas
-      unlocked: { gradient: 'from-orange-300 via-rose-300 to-orange-300', emoji: '🕯️', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-orange-200 to-gray-400', emoji: '🕯️', pattern: 'posada' }
+      unlocked: { gradient: 'from-orange-800 via-red-700 to-amber-800', emoji: '🕯️', pattern: 'posada', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🕯️', pattern: 'posada', border: '#8B7355' }
     },
     18: { // Las Posadas
-      unlocked: { gradient: 'from-purple-300 via-pink-300 to-purple-300', emoji: '⭐', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-purple-200 to-gray-400', emoji: '⭐', pattern: 'posada' }
+      unlocked: { gradient: 'from-red-800 via-orange-700 to-amber-700', emoji: '⭐', pattern: 'posada', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '⭐', pattern: 'posada', border: '#8B7355' }
     },
     19: { // Las Posadas
-      unlocked: { gradient: 'from-indigo-300 via-purple-300 to-indigo-300', emoji: '🎊', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-purple-200 to-gray-400', emoji: '🎊', pattern: 'posada' }
+      unlocked: { gradient: 'from-orange-900 via-red-800 to-orange-800', emoji: '🎊', pattern: 'posada', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎊', pattern: 'posada', border: '#8B7355' }
     },
     20: { // Las Posadas
-      unlocked: { gradient: 'from-blue-300 via-indigo-300 to-blue-300', emoji: '🎉', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-blue-200 to-gray-400', emoji: '🎉', pattern: 'posada' }
+      unlocked: { gradient: 'from-red-800 via-orange-800 to-amber-700', emoji: '🎉', pattern: 'posada', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎉', pattern: 'posada', border: '#8B7355' }
     },
     21: { // Las Posadas
-      unlocked: { gradient: 'from-teal-300 via-emerald-300 to-teal-300', emoji: '🎶', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-teal-200 to-gray-400', emoji: '🎶', pattern: 'posada' }
+      unlocked: { gradient: 'from-amber-800 via-orange-800 to-red-800', emoji: '🎶', pattern: 'posada', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎶', pattern: 'posada', border: '#8B7355' }
     },
     22: { // Las Posadas
-      unlocked: { gradient: 'from-lime-300 via-emerald-300 to-lime-300', emoji: '🌮', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-green-200 to-gray-400', emoji: '🌮', pattern: 'posada' }
+      unlocked: { gradient: 'from-orange-700 via-red-800 to-amber-800', emoji: '🌮', pattern: 'posada', border: '#FF8C42' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🌮', pattern: 'posada', border: '#8B7355' }
     },
     23: { // Noche Buena Eve - Las Posadas last night - HIGHLIGHTED
-      unlocked: { gradient: 'from-rose-300 via-amber-300 to-rose-300', emoji: '🎺', pattern: 'posada' },
-      locked: { gradient: 'from-gray-300 via-amber-200 to-gray-400', emoji: '🎺', pattern: 'posada' }
+      unlocked: { gradient: 'from-red-800 via-orange-700 to-amber-700', emoji: '🎺', pattern: 'posada', border: '#FFB347' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎺', pattern: 'posada', border: '#8B7355' }
     },
     24: { // Noche Buena - Christmas Eve - MOST IMPORTANT!
-      unlocked: { gradient: 'from-rose-400 via-amber-300 to-emerald-400', emoji: '🎁', pattern: 'navidad' },
-      locked: { gradient: 'from-gray-300 via-rose-200 to-gray-400', emoji: '🎁', pattern: 'navidad' }
+      unlocked: { gradient: 'from-red-900 via-orange-700 to-amber-600', emoji: '🎁', pattern: 'navidad', border: '#FFD700' },
+      locked: { gradient: 'from-gray-700 via-gray-600 to-gray-700', emoji: '🎁', pattern: 'navidad', border: '#8B7355' }
     }
   };
 
   const theme = themes[day];
   if (!theme) {
-    // Default theme for regular days - alternate between pastel colors
+    // Default theme for regular days - warm fireplace colors
     const isEven = day % 2 === 0;
     return unlocked
       ? { 
-          gradient: isEven ? 'from-rose-300 via-rose-300 to-emerald-300' : 'from-emerald-300 via-emerald-300 to-rose-300', 
+          gradient: isEven ? 'from-orange-700 via-red-800 to-orange-900' : 'from-red-800 via-orange-800 to-amber-800', 
           emoji: isEven ? '✨' : '⭐',
-          pattern: 'default' 
+          pattern: 'default',
+          border: '#FF8C42'
         }
       : { 
-          gradient: 'from-gray-300 via-gray-350 to-gray-400', 
+          gradient: 'from-gray-700 via-gray-600 to-gray-700', 
           emoji: isEven ? '✨' : '⭐',
-          pattern: 'default' 
+          pattern: 'default',
+          border: '#8B7355'
         };
   }
 
@@ -189,9 +191,6 @@ const getPattern = (pattern?: string) => {
 export default function DoorCard({ entry, isOpened, onOpen, previewMode }: DoorCardProps) {
   const unlocked = isDoorUnlocked(entry.day, previewMode);
   const theme = getThemeForDay(entry.day, unlocked);
-  
-  // Check if this is a special highlighted day
-  const isSpecialDay = [6, 8, 12, 16, 23, 24].includes(entry.day);
 
   const handleClick = () => {
     if (unlocked) {
@@ -219,66 +218,67 @@ export default function DoorCard({ entry, isOpened, onOpen, previewMode }: DoorC
       className="relative aspect-square"
       style={{ perspective: '1000px' }}
     >
-      {/* Door with tilt effect for opened doors */}
+      {/* Door with flip/open effect for opened doors */}
       <motion.div
         className="relative w-full h-full"
         animate={isOpened && unlocked ? {
-          rotate: -8,
-          scale: 0.95,
-          y: 2,
-          transition: { duration: 0.6, type: 'spring', stiffness: 100, damping: 15 }
+          rotateY: 15,
+          scale: 0.92,
+          opacity: 0.75,
+          transition: { duration: 0.5, type: 'spring', stiffness: 120, damping: 18 }
         } : {
-          rotate: 0,
+          rotateY: 0,
           scale: 1,
-          y: 0
+          opacity: 1
         }}
+        style={{ transformStyle: 'preserve-3d' }}
       >
         <motion.button
           onClick={handleClick}
           onKeyDown={handleKeyDown}
           disabled={!unlocked}
           whileHover={unlocked && !isOpened ? { 
-            scale: 1.02,
-            y: -1,
+            scale: 1.08,
+            y: -5,
+            boxShadow: '0 15px 40px rgba(255, 140, 66, 0.6), 0 0 30px rgba(255, 140, 66, 0.4)',
             transition: { duration: 0.3, ease: "easeOut" }
           } : {}}
           whileTap={unlocked && !isOpened ? { 
-            scale: 0.98,
-            transition: { duration: 0.15, ease: "easeInOut" }
+            scale: 0.92,
+            y: 0,
+            transition: { duration: 0.1, ease: "easeInOut" }
           } : {}}
           className={`
-            relative w-full h-full rounded-lg transition-all duration-200
+            relative w-full h-full rounded-2xl transition-all duration-200
             flex items-center justify-center overflow-hidden
             bg-gradient-to-br ${theme.gradient}
             ${unlocked 
-              ? 'cursor-pointer text-white shadow-md' 
-              : 'cursor-not-allowed dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 text-gray-500 dark:text-gray-400 shadow-sm'
+              ? 'cursor-pointer text-white' 
+              : 'cursor-not-allowed text-gray-400'
             }
-            ${isSpecialDay && unlocked && !isOpened ? 'ring-2 ring-white/40 ring-offset-1' : ''}
-            ${isOpened && unlocked ? 'opacity-60' : 'opacity-100'}
-            focus:outline-none focus:ring-3 focus:ring-blue-300 focus:ring-offset-2
+            ${isOpened && unlocked ? 'opacity-70' : 'opacity-100'}
+            focus:outline-none
           `}
           style={{
-            border: isOpened && unlocked 
-              ? '3px dashed rgba(255, 255, 255, 0.6)' 
-              : '2px solid rgba(255, 255, 255, 0.2)',
+            border: `4px solid ${theme.border}`,
             boxShadow: unlocked 
               ? isOpened 
-                ? '0 2px 8px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15)'
-                : '0 4px 10px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.1)'
-              : '0 2px 5px rgba(0,0,0,0.1)',
-            filter: isOpened && unlocked ? 'brightness(0.85)' : 'brightness(1)',
+                ? '0 2px 10px rgba(0,0,0,0.5), inset 0 6px 12px rgba(0,0,0,0.5)'
+                : `0 8px 25px rgba(0,0,0,0.5), 0 4px 15px rgba(255, 140, 66, 0.3), inset 0 2px 8px rgba(255,248,220,0.3), inset 0 -2px 5px rgba(0,0,0,0.2)`
+              : '0 4px 10px rgba(0,0,0,0.4)',
+            filter: isOpened && unlocked ? 'brightness(0.6) saturate(0.7) blur(0.5px)' : 'brightness(1.05)',
+            transformStyle: 'preserve-3d',
           }}
           aria-label={`Door ${entry.day}${!unlocked ? ' (still locked)' : ''}${isOpened ? ' (already opened)' : ''}`}
           aria-disabled={!unlocked}
         >
-          {/* Paper/Cardboard texture */}
-          <div className="absolute inset-0 pointer-events-none opacity-10">
+          {/* Paper/Cardboard texture - storybook style */}
+          <div className="absolute inset-0 pointer-events-none opacity-20">
             <div 
               style={{
                 backgroundImage: `
-                  repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, transparent 1px, transparent 2px, rgba(0,0,0,0.03) 3px),
-                  repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0px, transparent 1px, transparent 2px, rgba(0,0,0,0.03) 3px)
+                  repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, transparent 1px, transparent 3px, rgba(0,0,0,0.1) 4px),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, transparent 1px, transparent 3px, rgba(255,255,255,0.05) 4px)
                 `,
                 width: '100%',
                 height: '100%'
@@ -286,49 +286,95 @@ export default function DoorCard({ entry, isOpened, onOpen, previewMode }: DoorC
             />
           </div>
 
-          {/* Subtle paper grain for closed doors */}
+          {/* Decorative corners - illustrated book style */}
           {unlocked && !isOpened && (
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-white/15 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black/10 to-transparent"></div>
-            </div>
+            <>
+              <div className="absolute top-2 left-2 w-6 h-6 opacity-30" style={{
+                borderTop: `3px solid ${theme.border}`,
+                borderLeft: `3px solid ${theme.border}`,
+                borderRadius: '4px 0 0 0'
+              }} />
+              <div className="absolute top-2 right-2 w-6 h-6 opacity-30" style={{
+                borderTop: `3px solid ${theme.border}`,
+                borderRight: `3px solid ${theme.border}`,
+                borderRadius: '0 4px 0 0'
+              }} />
+              <div className="absolute bottom-2 left-2 w-6 h-6 opacity-30" style={{
+                borderBottom: `3px solid ${theme.border}`,
+                borderLeft: `3px solid ${theme.border}`,
+                borderRadius: '0 0 0 4px'
+              }} />
+              <div className="absolute bottom-2 right-2 w-6 h-6 opacity-30" style={{
+                borderBottom: `3px solid ${theme.border}`,
+                borderRight: `3px solid ${theme.border}`,
+                borderRadius: '0 0 4px 0'
+              }} />
+            </>
           )}
 
-          {/* Frost/Snow overlay effect for winter atmosphere */}
+          {/* Warm fireplace glow effect */}
           {unlocked && !isOpened && (
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-60 blur-sm"></div>
-              <div className="absolute top-3 left-4 w-1.5 h-1.5 bg-white rounded-full opacity-50 blur-sm"></div>
-              <div className="absolute top-2 left-1/2 w-1 h-1 bg-white rounded-full opacity-70 blur-sm"></div>
-            </div>
+            <motion.div
+              className="absolute inset-0 rounded-2xl pointer-events-none"
+              animate={{
+                boxShadow: [
+                  'inset 0 0 25px rgba(255, 140, 66, 0.4)',
+                  'inset 0 0 40px rgba(255, 100, 50, 0.6)',
+                  'inset 0 0 25px rgba(255, 140, 66, 0.4)',
+                ],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            />
+          )}
+          
+          {/* Opening animation sparkle effect */}
+          {isOpened && unlocked && (
+            <motion.div
+              className="absolute inset-0 rounded-2xl pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 0.5, 0] }}
+              transition={{ duration: 0.8 }}
+              style={{
+                background: 'radial-gradient(circle at center, rgba(255, 140, 66, 0.6), transparent 70%)',
+              }}
+            />
           )}
         
         <div className="relative w-full h-full flex flex-col items-center justify-center gap-1">
           {/* Decorative pattern */}
           {getPattern(theme.pattern)}
           
-          {/* Day number */}
+          {/* Day number - handwritten style */}
           <motion.span
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: entry.day * 0.02, type: 'spring', stiffness: 200 }}
-            className="text-5xl font-black relative z-10"
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: entry.day * 0.03, type: 'spring', stiffness: 200 }}
+            className="text-6xl font-bold relative z-10"
             style={{
-              textShadow: '0 4px 8px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.2)',
-              WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+              fontFamily: "'Caveat', cursive",
+              color: '#FFF8DC',
+              textShadow: `3px 3px 6px rgba(0,0,0,0.6), 0 0 20px rgba(212,175,55,0.4), -1px -1px 0 ${theme.border}`,
+              WebkitTextStroke: '1px rgba(62,39,35,0.3)',
             }}
           >
             {entry.day}
           </motion.span>
           
-          {/* Subtle day label for extra detail */}
+          {/* Small December label */}
           {unlocked && !isOpened && (
             <motion.span
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 0.7, y: 0 }}
-              transition={{ delay: entry.day * 0.02 + 0.2 }}
-              className="text-xs font-semibold tracking-wider uppercase relative z-10"
-              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 0.8, y: 0 }}
+              transition={{ delay: entry.day * 0.03 + 0.4 }}
+              className="text-xs font-serif uppercase tracking-wider relative z-10 mt-1"
+              style={{
+                color: '#FFF8DC',
+                textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
+              }}
             >
               December
             </motion.span>
@@ -336,25 +382,47 @@ export default function DoorCard({ entry, isOpened, onOpen, previewMode }: DoorC
           
           {isOpened && unlocked && (
             <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-              className="absolute -bottom-1 -right-1 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg ring-2 ring-white dark:ring-gray-800"
+              initial={{ scale: 0, rotate: -180, opacity: 0 }}
+              animate={{ 
+                scale: [0, 1.3, 1], 
+                rotate: [180, -10, 0],
+                opacity: 1 
+              }}
+              transition={{ 
+                duration: 0.6,
+                type: 'spring', 
+                stiffness: 200,
+                damping: 15
+              }}
+              className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl z-20"
+              style={{
+                background: 'linear-gradient(135deg, #FF8C42, #FFB347)',
+                border: '3px solid rgba(101, 67, 33, 0.8)',
+                boxShadow: '0 4px 15px rgba(255, 140, 66, 0.6), inset 0 2px 5px rgba(255, 255, 255, 0.3)'
+              }}
             >
-              <svg className="w-5 h-5 text-yellow-900" fill="currentColor" viewBox="0 0 20 20">
+              <motion.svg 
+                className="w-7 h-7" 
+                style={{ color: '#FFF8DC' }} 
+                fill="currentColor" 
+                viewBox="0 0 20 20"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
+              </motion.svg>
             </motion.div>
           )}
           
           {!unlocked && (
             <motion.div
-              initial={{ y: -10, opacity: 0 }}
+              initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: entry.day * 0.02 + 0.2 }}
-              className="absolute top-2 right-2"
+              transition={{ delay: entry.day * 0.03 + 0.3 }}
+              className="absolute top-3 right-3 z-10"
             >
-              <svg className="w-7 h-7 text-gray-400 dark:text-gray-500 drop-shadow-md" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-8 h-8 drop-shadow-lg" style={{ color: '#9E9E9E' }} fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
               </svg>
             </motion.div>

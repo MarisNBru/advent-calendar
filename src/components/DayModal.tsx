@@ -61,39 +61,34 @@ export default function DayModal({ entry, isOpen, onClose }: DayModalProps) {
               stiffness: 300,
               mass: 0.8
             }}
-            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white via-red-50/30 to-green-50/30 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900 rounded-3xl shadow-2xl border-2 border-red-200 dark:border-gray-700"
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl paper-texture"
+            style={{
+              background: 'rgba(255, 248, 220, 0.98)',
+              backdropFilter: 'blur(15px)',
+              border: '6px solid #D4AF37',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), inset 0 2px 10px rgba(212, 175, 55, 0.3)',
+            }}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
           >
-            {/* Subtle snowflake decorations in modal */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={`modal-snow-${i}`}
-                  className="absolute text-lg opacity-15"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                  }}
-                  animate={{
-                    y: [0, 20, 0],
-                    rotate: [0, 360],
-                    opacity: [0.05, 0.2, 0.05],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: i * 0.3,
-                  }}
-                >
-                  ❄️
-                </motion.div>
-              ))}
+            {/* Decorative corner ornaments - storybook style */}
+            <div className="absolute top-3 left-3 w-12 h-12 opacity-20 pointer-events-none">
+              <svg viewBox="0 0 50 50" style={{ fill: '#8B2E2E' }}>
+                <path d="M 0,0 L 0,20 Q 0,0 20,0 Z" />
+              </svg>
+            </div>
+            <div className="absolute top-3 right-3 w-12 h-12 opacity-20 pointer-events-none">
+              <svg viewBox="0 0 50 50" style={{ fill: '#8B2E2E' }}>
+                <path d="M 50,0 L 50,20 Q 50,0 30,0 Z" />
+              </svg>
             </div>
 
-            <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-gradient-to-r from-red-100/80 via-white/80 to-green-100/80 dark:from-gray-800/90 dark:via-gray-800/90 dark:to-gray-800/90 border-b-2 border-red-300 dark:border-gray-700 backdrop-blur-md">
+            <div className="sticky top-0 z-10 flex items-center justify-between p-6 rounded-t-3xl backdrop-blur-sm" style={{
+              background: 'linear-gradient(to right, rgba(212, 175, 55, 0.2), rgba(255, 248, 220, 0.5), rgba(212, 175, 55, 0.2))',
+              borderBottom: '3px solid #D4AF37',
+            }}>
               <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -101,14 +96,19 @@ export default function DayModal({ entry, isOpen, onClose }: DayModalProps) {
               >
                 <h2 
                   id="modal-title" 
-                  className="text-3xl font-black bg-gradient-to-r from-red-600 to-green-600 dark:from-red-400 dark:to-green-400 bg-clip-text text-transparent"
+                  className="text-4xl font-bold"
                   style={{
-                    textShadow: '0 2px 10px rgba(220, 38, 38, 0.2)',
+                    fontFamily: "'Crimson Text', serif",
+                    color: '#8B2E2E',
+                    textShadow: '2px 2px 0 #D4AF37, 4px 4px 8px rgba(139, 46, 46, 0.3)',
                   }}
                 >
                   December {entry.day}
                 </h2>
-                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 font-semibold">
+                <p className="text-sm mt-1 italic" style={{
+                  fontFamily: "'Merriweather', serif",
+                  color: '#6B5B4C',
+                }}>
                   A special gift just for you
                 </p>
               </motion.div>
@@ -116,23 +116,30 @@ export default function DayModal({ entry, isOpen, onClose }: DayModalProps) {
               <motion.button
                 ref={closeButtonRef}
                 onClick={onClose}
-                className="p-3 rounded-xl bg-red-100 hover:bg-red-200 dark:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-200 group shadow-lg"
+                className="p-3 rounded-xl transition-all duration-200 group"
+                style={{
+                  background: 'linear-gradient(135deg, #8B2E2E, #D4691C)',
+                  boxShadow: '0 4px 12px rgba(139, 46, 46, 0.4)',
+                }}
                 aria-label="Close modal"
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <svg className="w-6 h-6 text-red-600 dark:text-gray-300 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg className="w-6 h-6 text-amber-50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </motion.button>
             </div>
 
-            <div className="p-6 relative z-10">
+            <div className="p-8 relative z-10">
               <ContentRenderer entry={entry} />
             </div>
             
-            {/* Bottom decoration */}
-            <div className="h-4 bg-gradient-to-r from-red-200 via-green-200 to-red-200 dark:from-red-900/50 dark:via-green-900/50 dark:to-red-900/50"></div>
+            {/* Bottom decoration - ornamental border */}
+            <div className="h-6 rounded-b-3xl" style={{
+              background: 'linear-gradient(to right, #D4AF37, #F4E4A6, #D4AF37)',
+              boxShadow: 'inset 0 2px 8px rgba(139, 46, 46, 0.2)',
+            }}></div>
           </motion.div>
         </motion.div>
       )}
