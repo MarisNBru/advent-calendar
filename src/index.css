@@ -1,9 +1,9 @@
+/* Google Fonts - Storybook-style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:wght@300;400;700;900&family=Caveat:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Google Fonts - Storybook-style fonts */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:wght@300;400;700;900&family=Caveat:wght@400;500;600;700&display=swap');
 
 :root {
   /* Storybook warm color palette - inspired by cozy fireplace scene */
@@ -180,4 +180,13 @@ html {
     0 4px 20px rgba(212, 105, 28, 0.2),
     0 0 40px rgba(212, 175, 55, 0.1),
     inset 0 2px 10px rgba(255, 248, 220, 0.5);
+}
+
+.modal-scroll-area {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-scroll-area::-webkit-scrollbar {
+  display: none;
 }

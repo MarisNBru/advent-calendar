@@ -3,7 +3,8 @@
     "day": 1,
     "type": "text",
     "title": "Welcome to Advent! 🎄",
-    "content": "Welcome to your personal Advent calendar 2025! A new surprise awaits you every day. Enjoy this special season and let yourself be enchanted!"
+    "content": "Welcome to your personal Advent calendar 2025! A new surprise awaits you every day. Enjoy this special season and let yourself be enchanted!",
+    "imageUrl": "pics/1.jpeg"
   },
   {
     "day": 2,
@@ -14,11 +15,10 @@
   },
   {
     "day": 3,
-    "type": "voucher",
+    "type": "image",
     "title": "Cozy Evening 🍵",
     "content": "Redeem this for a relaxing evening with hot chocolate and cookies!",
-    "voucherCode": "XMAS-RELAX-2025",
-    "voucherValidUntil": "December 24, 2025"
+    "imageUrl": "pics/20.jpg"
   },
   {
     "day": 4,
@@ -31,7 +31,8 @@
     "day": 5,
     "type": "text",
     "title": "St. Nicholas Eve 🎅",
-    "content": "Tomorrow is St. Nicholas Day! Did you polish your shoes? Saint Nicholas will surely bring something delicious!"
+    "content": "Tomorrow is St. Nicholas Day! Did you polish your shoes? Saint Nicholas will surely bring something delicious!",
+    "imageUrl": "pics/3.jpeg"
   },
   {
     "day": 6,
@@ -42,11 +43,10 @@
   },
   {
     "day": 7,
-    "type": "voucher",
+    "type": "image",
     "title": "Movie Night 🎬🍿",
     "content": "Redeem this for a cozy movie night with your favorite film and popcorn!",
-    "voucherCode": "MOVIE-NIGHT-25",
-    "voucherValidUntil": "December 31, 2025"
+    "imageUrl": "pics/7.jpeg"
   },
   {
     "day": 8,
@@ -57,10 +57,16 @@
   },
   {
     "day": 9,
-    "type": "link",
+    "type": "gallery",
     "title": "Winter & Mexican Recipes 🌮🍪",
     "content": "Discover delicious recipes - from traditional German Christmas cookies to Mexican holiday treats like Buñuelos and Tamales!",
-    "linkUrl": "https://www.mexicoinmykitchen.com/mexican-christmas-recipes/"
+    "galleryImages": [
+      "pics/Essen-1.jpg",
+      "pics/Essen-2.jpg",
+      "pics/Essen-3.jpg",
+      "pics/Essen-4.jpg",
+      "pics/Essen-5.jpg"
+    ]
   },
   {
     "day": 10,
@@ -71,18 +77,17 @@
   },
   {
     "day": 11,
-    "type": "voucher",
+    "type": "image",
     "title": "Spa Day 🛁💆‍♀️",
     "content": "Treat yourself to a relaxing wellness day with a bubble bath and face mask!",
-    "voucherCode": "WELLNESS-2025",
-    "voucherValidUntil": "January 31, 2026"
+    "imageUrl": "pics/9.jpeg"
   },
   {
     "day": 12,
     "type": "image",
     "title": "Día de la Virgen de Guadalupe 🌹",
     "content": "Happy Day of Our Lady of Guadalupe! 🇲🇽 One of Mexico's most important holidays! Today we celebrate your beautiful culture and traditions. You're halfway through the calendar - the best is yet to come!",
-    "imageUrl": "pics/12.jpeg"
+    "imageUrl": "pics/17.jpg"
   },
   {
     "day": 13,
@@ -93,18 +98,24 @@
   },
   {
     "day": 14,
-    "type": "link",
+    "type": "gallery",
     "title": "Virtual Christmas Markets 🎪",
     "content": "Explore the most beautiful Christmas markets in Europe and Posada celebrations in Mexico!",
-    "linkUrl": "https://www.google.com/maps"
+    "galleryImages": [
+      "pics/Tierpark-1.jpg",
+      "pics/Tierpark-2.jpg",
+      "pics/Tierpark-3.jpg"
+    ]
   },
   {
     "day": 15,
-    "type": "voucher",
+    "type": "gallery",
     "title": "Breakfast in Bed 🥐☕",
     "content": "Let yourself be pampered with a delicious breakfast in bed!",
-    "voucherCode": "BREAKFAST-LUXURY",
-    "voucherValidUntil": "February 28, 2026"
+    "galleryImages": [
+      "pics/first-bday-1.jpg",
+      "pics/first-bday-2.jpg"
+    ]
   },
   {
     "day": 16,
@@ -118,14 +129,14 @@
     "type": "image",
     "title": "Christmas Tree Decorating 🎄✨",
     "content": "It's almost time! German traditions meet Mexican sparkle!",
-    "imageUrl": "pics/11.jpeg"
+    "imageUrl": "pics/18.jpg"
   },
   {
     "day": 18,
     "type": "image",
-    "title": "DIY Gift Ideas 🎁",
-    "content": "Creative ideas for handmade Christmas gifts - inspired by both cultures!",
-    "imageUrl": "pics/3.jpeg"
+    "title": "Dinner Date 🍽️🌮",
+    "content": "Let's go out for dinner together and enjoy the evening! Mexican, German, or something completely different?",
+    "imageUrl": "pics/19.jpg"
   },
   {
     "day": 19,
@@ -138,22 +149,30 @@
     "day": 20,
     "type": "image",
     "title": "Only 4 Days Left! ⭐",
-    "content": "Christmas Eve is getting closer! The anticipation is growing! In Mexico, preparations for Noche Buena are in full swing! 🎉",
-    "imageUrl": "pics/16.jpeg"
+    "content": "Christmas Eve is getting closer! Let's pause for a moment with a cozy family snapshot before the celebrations speed up.",
+    "imageUrl": "pics/Familie.jpg"
   },
   {
     "day": 21,
-    "type": "image",
+    "type": "gallery",
     "title": "Winter Evening 🌙",
     "content": "The most peaceful time of the year - enjoy a cozy evening!",
-    "imageUrl": "pics/9.jpeg"
+    "galleryImages": [
+      "pics/Garten-1.jpg",
+      "pics/Garten-2.jpg",
+      "pics/Garten-3.jpg"
+    ]
   },
   {
     "day": 22,
-    "type": "image",
-    "title": "Dinner Date 🍽️🌮",
-    "content": "Let's go out for dinner together and enjoy the evening! Mexican, German, or something completely different?",
-    "imageUrl": "pics/14.jpeg"
+    "type": "gallery",
+    "title": "Tanzkurs Erinnerungen",
+    "content": "Eine kleine Reise durch unseren Tanzkurs: vom ersten Schwung bis zum Abschlussball – festgehalten in drei Lieblingsmomenten.",
+    "galleryImages": [
+      "pics/maris-tanzkurs-abschlussball20.jpg",
+      "pics/maris-tanzkurs-abschlussball52.jpg",
+      "pics/maris-tanzkurs-abschlussball54.jpg"
+    ]
   },
   {
     "day": 23,
@@ -164,10 +183,8 @@
   },
   {
     "day": 24,
-    "type": "voucher",
+    "type": "text",
     "title": "¡Feliz Navidad! Merry Christmas! 🎄🎁",
-    "content": "This is your main gift! Let yourself be surprised and enjoy the holidays. From Germany to Mexico - love knows no borders! Te quiero mucho! ❤️🇲🇽🇩🇪",
-    "voucherCode": "XMAS-SPECIAL-2025",
-    "voucherValidUntil": "January 6, 2026"
+    "content": "This is your main gift! Let yourself be surprised and enjoy the holidays. From Germany to Mexico - love knows no borders! Te quiero mucho! ❤️🇲🇽🇩🇪"
   }
 ]

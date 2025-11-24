@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import MusicToggle from './MusicToggle';
 
 export default function Header() {
   return (
@@ -8,6 +9,7 @@ export default function Header() {
       boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 150, 50, 0.2)',
       border: '2px solid rgba(212, 175, 55, 0.3)'
     }}>
+      <MusicToggle />
       {/* Ornamental divider top */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-orange-600/50 to-transparent"></div>
 

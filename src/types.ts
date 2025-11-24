@@ -1,9 +1,10 @@
 export interface CalendarEntry {
   day: number;
-  type: 'text' | 'image' | 'voucher' | 'link';
+  type: 'text' | 'image' | 'voucher' | 'link' | 'gallery';
   title: string;
   content: string;
   imageUrl?: string;
+  galleryImages?: string[];
   linkUrl?: string;
   audioUrl?: string;
   voucherCode?: string;
