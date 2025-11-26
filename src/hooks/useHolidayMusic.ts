@@ -1,197 +1,149 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-interface MelodyNote {
-  freq: number;
-  duration: number;
-  gap?: number;
-}
-
-const MELODY: MelodyNote[] = [
-  { freq: 659.25, duration: 0.35 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 659.25, duration: 0.55, gap: 0.1 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 659.25, duration: 0.55, gap: 0.12 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 783.99, duration: 0.35 },
-  { freq: 523.25, duration: 0.35 },
-  { freq: 587.33, duration: 0.4 },
-  { freq: 659.25, duration: 0.9, gap: 0.15 },
-  { freq: 698.46, duration: 0.35 },
-  { freq: 698.46, duration: 0.35 },
-  { freq: 698.46, duration: 0.4 },
-  { freq: 698.46, duration: 0.35 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 659.25, duration: 0.2 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 587.33, duration: 0.35 },
-  { freq: 587.33, duration: 0.35 },
-  { freq: 659.25, duration: 0.35 },
-  { freq: 587.33, duration: 0.35 },
-  { freq: 783.99, duration: 0.9, gap: 0.2 }
-];
-
-const LOOP_DURATION = MELODY.reduce((total, note) => total + note.duration + (note.gap ?? 0.08), 0);
+const TRACK_URL = `${import.meta.env.BASE_URL || '/'}music/Backgroundmusic.mp3`;
 
 type HolidayMusicHandle = {
-  isPlaying: boolean;
-  togglePlayback: () => void;
-  stopPlayback: () => void;
+  isActive: boolean;
   volume: number;
   setVolume: (value: number) => void;
 };
 
+const MIN_VOLUME = 0;
+const MAX_VOLUME = 1;
+const DEFAULT_VOLUME = 0.22;
+
 export function useHolidayMusic(): HolidayMusicHandle {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, updateVolume] = useState(0.35);
+  const [isActive, setIsActive] = useState(false);
+  const [volume, setVolumeState] = useState(DEFAULT_VOLUME);
 
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const masterGainRef = useRef<GainNode | null>(null);
-  const loopTimeoutRef = useRef<number | null>(null);
-  const volumeRef = useRef(0.35);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const fadeFrameRef = useRef<number | null>(null);
+  const volumeRef = useRef(DEFAULT_VOLUME);
 
-  const clearLoop = useCallback(() => {
-    if (loopTimeoutRef.current !== null) {
-      window.clearTimeout(loopTimeoutRef.current);
-      loopTimeoutRef.current = null;
+  const cancelFade = useCallback(() => {
+    if (fadeFrameRef.current !== null) {
+      cancelAnimationFrame(fadeFrameRef.current);
+      fadeFrameRef.current = null;
     }
   }, []);
 
-  const ensureContext = useCallback(() => {
+  const ensureAudio = useCallback(() => {
     if (typeof window === 'undefined') {
       return null;
     }
 
-    const AudioContextCtor = window.AudioContext || (window as any).webkitAudioContext;
-    if (!AudioContextCtor) {
-      return null;
+    if (!audioRef.current) {
+      const audio = new Audio(TRACK_URL);
+      audio.loop = true;
+      audio.preload = 'auto';
+      audio.volume = volumeRef.current;
+      audioRef.current = audio;
     }
 
-    if (!audioCtxRef.current) {
-      const ctx = new AudioContextCtor();
-      const master = ctx.createGain();
-      master.gain.value = volumeRef.current;
-      master.connect(ctx.destination);
-      audioCtxRef.current = ctx;
-      masterGainRef.current = master;
-    }
-
-    return audioCtxRef.current;
+    return audioRef.current;
   }, []);
 
-  const scheduleLoop = useCallback(() => {
-    const ctx = ensureContext();
-    const master = masterGainRef.current;
-
-    if (!ctx || !master) {
+  const fadeToVolume = useCallback((target: number, onDone?: () => void) => {
+    const audio = audioRef.current;
+    if (!audio) {
       return;
     }
 
-    let nextStart = ctx.currentTime + 0.1;
+    cancelFade();
 
-    MELODY.forEach((note) => {
-      const fundamental = ctx.createOscillator();
-      fundamental.type = 'triangle';
-      fundamental.frequency.setValueAtTime(note.freq, nextStart);
+    const step = () => {
+      if (!audioRef.current) {
+        return;
+      }
 
-      const shimmer = ctx.createOscillator();
-      shimmer.type = 'sine';
-      shimmer.frequency.setValueAtTime(note.freq * 2, nextStart);
+      const current = audio.volume;
+      const diff = target - current;
 
-      const env = ctx.createGain();
-      env.gain.setValueAtTime(0.0001, nextStart);
-      env.gain.linearRampToValueAtTime(0.9, nextStart + 0.04);
-      env.gain.exponentialRampToValueAtTime(0.0001, nextStart + note.duration + 0.35);
+      if (Math.abs(diff) < 0.01) {
+        audio.volume = target;
+        cancelFade();
+        onDone?.();
+        return;
+      }
 
-      fundamental.connect(env);
-      shimmer.connect(env);
-      env.connect(master);
+      audio.volume = current + diff * 0.2;
+      fadeFrameRef.current = requestAnimationFrame(step);
+    };
 
-      const stopTime = nextStart + note.duration + 0.4;
-      fundamental.start(nextStart);
-      shimmer.start(nextStart);
-      fundamental.stop(stopTime);
-      shimmer.stop(stopTime);
-
-      nextStart += note.duration + (note.gap ?? 0.08);
-    });
-
-    loopTimeoutRef.current = window.setTimeout(scheduleLoop, LOOP_DURATION * 1000);
-  }, [ensureContext]);
+    fadeFrameRef.current = requestAnimationFrame(step);
+  }, [cancelFade]);
 
   const startPlayback = useCallback(async () => {
-    if (loopTimeoutRef.current !== null) {
+    const audio = ensureAudio();
+    if (!audio) {
       return;
     }
 
-    const ctx = ensureContext();
-    const master = masterGainRef.current;
-
-    if (!ctx || !master) {
+    if (!audio.paused) {
+      setIsActive(true);
       return;
     }
 
-    if (ctx.state === 'suspended') {
-      await ctx.resume();
+    try {
+      audio.volume = 0;
+      await audio.play();
+      fadeToVolume(volumeRef.current);
+      setIsActive(true);
+    } catch (err) {
+      const isNotAllowed = err instanceof DOMException && err.name === 'NotAllowedError';
+      if (import.meta.env.DEV && !isNotAllowed) {
+        console.warn('Background music could not start yet:', err);
+      }
+      setIsActive(false);
     }
-
-    master.gain.cancelScheduledValues(ctx.currentTime);
-    master.gain.setTargetAtTime(volumeRef.current, ctx.currentTime, 0.1);
-
-    scheduleLoop();
-    setIsPlaying(true);
-  }, [ensureContext, scheduleLoop]);
-
-  const stopPlayback = useCallback(() => {
-    clearLoop();
-    const ctx = audioCtxRef.current;
-    const master = masterGainRef.current;
-
-    if (ctx && master) {
-      const now = ctx.currentTime;
-      master.gain.cancelScheduledValues(now);
-      master.gain.setTargetAtTime(0.0001, now, 0.08);
-    }
-
-    setIsPlaying(false);
-  }, [clearLoop]);
-
-  const togglePlayback = useCallback(() => {
-    if (isPlaying) {
-      stopPlayback();
-    } else {
-      void startPlayback();
-    }
-  }, [isPlaying, startPlayback, stopPlayback]);
+  }, [ensureAudio, fadeToVolume]);
 
   const setVolume = useCallback((value: number) => {
-    const nextValue = Math.min(1, Math.max(0, value));
-    volumeRef.current = nextValue;
-    updateVolume(nextValue);
+    const clamped = Math.min(MAX_VOLUME, Math.max(MIN_VOLUME, value));
+    volumeRef.current = clamped;
+    setVolumeState(clamped);
 
-    const ctx = audioCtxRef.current;
-    const master = masterGainRef.current;
-    if (ctx && master) {
-      master.gain.cancelScheduledValues(ctx.currentTime);
-      master.gain.setTargetAtTime(nextValue, ctx.currentTime, 0.1);
+    const audio = audioRef.current;
+    if (audio && !audio.paused) {
+      fadeToVolume(clamped);
+    } else if (audio) {
+      audio.volume = clamped;
     }
-  }, []);
+  }, [fadeToVolume]);
+
+  useEffect(() => {
+    void startPlayback();
+  }, [startPlayback]);
+
+  useEffect(() => {
+    const handleUserGesture = () => {
+      void startPlayback();
+    };
+
+    document.addEventListener('pointerdown', handleUserGesture, { once: false });
+    document.addEventListener('keydown', handleUserGesture, { once: false });
+    document.addEventListener('visibilitychange', handleUserGesture, { once: false });
+
+    return () => {
+      document.removeEventListener('pointerdown', handleUserGesture);
+      document.removeEventListener('keydown', handleUserGesture);
+      document.removeEventListener('visibilitychange', handleUserGesture);
+    };
+  }, [startPlayback]);
 
   useEffect(() => {
     return () => {
-      clearLoop();
-      if (audioCtxRef.current) {
-        void audioCtxRef.current.close().catch(() => undefined);
+      cancelFade();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+        audioRef.current.load();
       }
     };
-  }, [clearLoop]);
+  }, [cancelFade]);
 
   return {
-    isPlaying,
-    togglePlayback,
-    stopPlayback,
+    isActive,
     volume,
     setVolume,
   };

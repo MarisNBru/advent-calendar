@@ -37,11 +37,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-image: url('/pics/fireplace-room.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-color: #1c0f08;
   color: var(--color-deep-wood);
 }
 
@@ -189,4 +185,38 @@ html {
 
 .modal-scroll-area::-webkit-scrollbar {
   display: none;
+}
+
+.snowfall {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.2) 60%, transparent 100%);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--flake-opacity, 0.7);
+  }
+  100% {
+    transform: translate3d(var(--snow-drift, 0px), 110vh, 0);
+    opacity: 0;
+  }
 }

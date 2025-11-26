@@ -7,6 +7,10 @@ import DoorCard from './components/DoorCard';
 import DayModal from './components/DayModal';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Snowfall from './components/Snowfall';
+
+const ASSET_BASE = import.meta.env.BASE_URL || '/';
+const FIREPLACE_BG = `${ASSET_BASE}pics/fireplace-room.png`;
 
 function App() {
   const [calendarData, setCalendarData] = useState<CalendarEntry[]>([]);
@@ -101,7 +105,7 @@ function App() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{
-        backgroundImage: 'url("/pics/fireplace-room.png")',
+        backgroundImage: `url(${FIREPLACE_BG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -142,7 +146,7 @@ function App() {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{
-        backgroundImage: 'url("/pics/fireplace-room.png")',
+        backgroundImage: `url(${FIREPLACE_BG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -175,13 +179,14 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div className="min-h-screen relative overflow-hidden" style={{
-        backgroundImage: 'url("/pics/fireplace-room.png")',
+        backgroundImage: `url(${FIREPLACE_BG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}>
+        <Snowfall />
         <div className="container mx-auto px-4 py-8 relative z-10">
           <Header />
 
