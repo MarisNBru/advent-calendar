@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const TRACK_URL = `${import.meta.env.BASE_URL || '/'}music/Backgroundmusic.mp3`;
+const BASE = import.meta.env.BASE_URL || '/';
+const TRACK_URL = `${BASE}music/Backgroundmusic.mp3`;
 
 type HolidayMusicHandle = {
   isActive: boolean;
@@ -19,6 +20,7 @@ export function useHolidayMusic(): HolidayMusicHandle {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeFrameRef = useRef<number | null>(null);
   const volumeRef = useRef(DEFAULT_VOLUME);
+  const audioReadyRef = useRef(false);
 
   const cancelFade = useCallback(() => {
     if (fadeFrameRef.current !== null) {
@@ -33,10 +35,23 @@ export function useHolidayMusic(): HolidayMusicHandle {
     }
 
     if (!audioRef.current) {
-      const audio = new Audio(TRACK_URL);
+      const audio = new Audio();
       audio.loop = true;
       audio.preload = 'auto';
       audio.volume = volumeRef.current;
+
+      // Listen for successful load
+      audio.addEventListener('canplaythrough', () => {
+        audioReadyRef.current = true;
+      }, { once: true });
+
+      // Listen for load errors (missing file, wrong MIME, etc.)
+      audio.addEventListener('error', () => {
+        audioReadyRef.current = false;
+        // Silently ignore – the file may not exist in production yet
+      }, { once: true });
+
+      audio.src = TRACK_URL;
       audioRef.current = audio;
     }
 
@@ -79,6 +94,11 @@ export function useHolidayMusic(): HolidayMusicHandle {
       return;
     }
 
+    // Don't try to play if audio failed to load (file missing, etc.)
+    if (audio.error) {
+      return;
+    }
+
     if (!audio.paused) {
       setIsActive(true);
       return;
@@ -90,9 +110,11 @@ export function useHolidayMusic(): HolidayMusicHandle {
       fadeToVolume(volumeRef.current);
       setIsActive(true);
     } catch (err) {
-      const isNotAllowed = err instanceof DOMException && err.name === 'NotAllowedError';
-      if (import.meta.env.DEV && !isNotAllowed) {
-        console.warn('Background music could not start yet:', err);
+      // Silently ignore autoplay blocks (NotAllowedError) and missing source errors (NotSupportedError)
+      const isDOMError = err instanceof DOMException;
+      const isExpectedError = isDOMError && (err.name === 'NotAllowedError' || err.name === 'NotSupportedError');
+      if (!isExpectedError) {
+        console.warn('Background music error:', err);
       }
       setIsActive(false);
     }

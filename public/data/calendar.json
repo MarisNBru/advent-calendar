@@ -2,64 +2,64 @@
   {
     "day": 1,
     "type": "text",
-    "title": "Welcome to Advent! 🎄",
-    "content": "Welcome to your personal Advent calendar 2025! A new surprise awaits you every day. Enjoy this special season and let yourself be enchanted!",
+    "title": "Buenos días mi amor",
+    "content": "Hola mi amor, this is the first day of 24 days filled with....ahhh sorry, I got distracted by the Christmas lights... Anyway, I wish you a wonderful Advent season full of joy, love, and cozy moments! Each day holds a special surprise for you.",
     "imageUrl": "pics/1.jpeg"
   },
   {
     "day": 2,
     "type": "image",
-    "title": "Winter Magic ❄️",
-    "content": "The first snowflakes are falling...",
+    "title": "Guten Morgen mein Herz",
+    "content": "I have some hidden talents i never told you...",
     "imageUrl": "pics/2.jpeg"
   },
   {
     "day": 3,
     "type": "image",
-    "title": "Cozy Evening 🍵",
-    "content": "Redeem this for a relaxing evening with hot chocolate and cookies!",
+    "title": "Morning sunshine, beautiful",
+    "content": "Si have had hair but they just really blonde...",
     "imageUrl": "pics/20.jpg"
   },
   {
     "day": 4,
     "type": "image",
-    "title": "Christmas Music 🎵",
-    "content": "Let the festive melodies fill your heart!",
+    "title": "Eres mi luz hoy",
+    "content": "Idk exactly which birthday this is from...but i was pretty young",
     "imageUrl": "pics/4.jpeg"
   },
   {
     "day": 5,
     "type": "text",
-    "title": "St. Nicholas Eve 🎅",
-    "content": "Tomorrow is St. Nicholas Day! Did you polish your shoes? Saint Nicholas will surely bring something delicious!",
+    "title": "Wach auf, Liebe",
+    "content": "In our family we have to close our eyes when we come to the table and open them again when we sit down. So we see the cake and the gifts at the same time. Happy Maris",
     "imageUrl": "pics/3.jpeg"
   },
   {
     "day": 6,
     "type": "image",
-    "title": "St. Nicholas Day 🎅🥾",
-    "content": "¡San Nicolás estuvo aquí! St. Nicholas was here!",
+    "title": "Sweet morning, mi vida",
+    "content": "I told you about my school project where i baked a cake...I was kinda proud of it",
     "imageUrl": "pics/6.jpeg"
   },
   {
     "day": 7,
     "type": "image",
-    "title": "Movie Night 🎬🍿",
-    "content": "Redeem this for a cozy movie night with your favorite film and popcorn!",
+    "title": "Frühstück fürs Herz",
+    "content": "I think that for a photo of me for my ID card...DIOSMIO i had so many different hairstyles",
     "imageUrl": "pics/7.jpeg"
   },
   {
     "day": 8,
     "type": "image",
-    "title": "Día de la Inmaculada Concepción 🙏",
-    "content": "A special day in Mexico! While Germany celebrates with cookies, Mexico honors the Immaculate Conception. Let's bake some Polvorones (Mexican wedding cookies) together! 🇲🇽",
+    "title": "You are my morning calm",
+    "content": "Since day one, loved to sleep the whole day",
     "imageUrl": "pics/8.jpeg"
   },
   {
     "day": 9,
     "type": "gallery",
-    "title": "Winter & Mexican Recipes 🌮🍪",
-    "content": "Discover delicious recipes - from traditional German Christmas cookies to Mexican holiday treats like Buñuelos and Tamales!",
+    "title": "Hola corazón lindo",
+    "content": "I mean yea...i loved quark",
     "galleryImages": [
       "pics/Essen-1.jpg",
       "pics/Essen-2.jpg",
@@ -71,36 +71,36 @@
   {
     "day": 10,
     "type": "image",
-    "title": "Candlelight Warmth 🕯️",
-    "content": "Time for reflection and coziness...",
+    "title": "Sanfter Morgen für dich",
+    "content": "Sleeping with Matti i think...",
     "imageUrl": "pics/10.jpeg"
   },
   {
     "day": 11,
     "type": "image",
-    "title": "Spa Day 🛁💆‍♀️",
-    "content": "Treat yourself to a relaxing wellness day with a bubble bath and face mask!",
+    "title": "My warm morning hug",
+    "content": "Really rare i did my homework hahaha",
     "imageUrl": "pics/9.jpeg"
   },
   {
     "day": 12,
     "type": "image",
-    "title": "Día de la Virgen de Guadalupe 🌹",
-    "content": "Happy Day of Our Lady of Guadalupe! 🇲🇽 One of Mexico's most important holidays! Today we celebrate your beautiful culture and traditions. You're halfway through the calendar - the best is yet to come!",
+    "title": "Guten Morgen schöne Seele",
+    "content": "I kinda look like laurin...",
     "imageUrl": "pics/17.jpg"
   },
   {
     "day": 13,
     "type": "image",
-    "title": "Snowy Landscape 🏔️",
-    "content": "Nature in its winter dress",
+    "title": "Besos y café para ti",
+    "content": "Right there I did the pallette bed i have rn on my balcony",
     "imageUrl": "pics/13.jpeg"
   },
   {
     "day": 14,
     "type": "gallery",
-    "title": "Virtual Christmas Markets 🎪",
-    "content": "Explore the most beautiful Christmas markets in Europe and Posada celebrations in Mexico!",
+    "title": "Hello love, gentle day",
+    "content": "I loved going to the animal park, especially to the goats lol",
     "galleryImages": [
       "pics/Tierpark-1.jpg",
       "pics/Tierpark-2.jpg",
@@ -110,8 +110,8 @@
   {
     "day": 15,
     "type": "gallery",
-    "title": "Breakfast in Bed 🥐☕",
-    "content": "Let yourself be pampered with a delicious breakfast in bed!",
+    "title": "Strahlender Morgen liebste",
+    "content": "My first birthday...now i'm feeling old",
     "galleryImages": [
       "pics/first-bday-1.jpg",
       "pics/first-bday-2.jpg"
@@ -120,43 +120,43 @@
   {
     "day": 16,
     "type": "image",
-    "title": "Las Posadas Begin! 🏠🕯️",
-    "content": "The first night of Las Posadas! 🇲🇽 For 9 nights, Mexicans reenact Mary and Joseph's journey to Bethlehem. A beautiful tradition blending with the German Christmas spirit! ¡Felices Posadas!",
+    "title": "Hoy brillan tus ojos",
+    "content": "I think it was after Christmas and i got some LEEEGGGOOOOoo",
     "imageUrl": "pics/16.jpeg"
   },
   {
     "day": 17,
     "type": "image",
-    "title": "Christmas Tree Decorating 🎄✨",
-    "content": "It's almost time! German traditions meet Mexican sparkle!",
+    "title": "Dein Lächeln macht den Tag",
+    "content": "Even with 1 already a playboy",
     "imageUrl": "pics/18.jpg"
   },
   {
     "day": 18,
     "type": "image",
-    "title": "Dinner Date 🍽️🌮",
-    "content": "Let's go out for dinner together and enjoy the evening! Mexican, German, or something completely different?",
+    "title": "Morning cuddle promise",
+    "content": "Mi mami and me",
     "imageUrl": "pics/19.jpg"
   },
   {
     "day": 19,
     "type": "image",
-    "title": "Game Night 🎮🎲",
-    "content": "An evening full of fun - together or solo!",
+    "title": "Du bist mein erster Gedanke",
+    "content": "My favorite hobby...backing",
     "imageUrl": "pics/5.jpeg"
   },
   {
     "day": 20,
     "type": "image",
-    "title": "Only 4 Days Left! ⭐",
-    "content": "Christmas Eve is getting closer! Let's pause for a moment with a cozy family snapshot before the celebrations speed up.",
+    "title": "Tu sonrisa despierta todo",
+    "content": "CWith my grandparents...my grandma looks so like my dad here",
     "imageUrl": "pics/Familie.jpg"
   },
   {
     "day": 21,
     "type": "gallery",
-    "title": "Winter Evening 🌙",
-    "content": "The most peaceful time of the year - enjoy a cozy evening!",
+    "title": "Soft morning, my dear",
+    "content": "Got the little garden to my birthday i think...and now i growing weed on it hahaha",
     "galleryImages": [
       "pics/Garten-1.jpg",
       "pics/Garten-2.jpg",
@@ -166,8 +166,8 @@
   {
     "day": 22,
     "type": "gallery",
-    "title": "Tanzkurs Erinnerungen",
-    "content": "Eine kleine Reise durch unseren Tanzkurs: vom ersten Schwung bis zum Abschlussball – festgehalten in drei Lieblingsmomenten.",
+    "title": "Liebe weckt den Tag",
+    "content": "Jaaa...first and last yet time i looked so fancy",
     "galleryImages": [
       "pics/maris-tanzkurs-abschlussball20.jpg",
       "pics/maris-tanzkurs-abschlussball52.jpg",
@@ -177,14 +177,14 @@
   {
     "day": 23,
     "type": "image",
-    "title": "Tomorrow is the Big Day! 🎅🎄",
-    "content": "Christmas Eve is tomorrow! In Mexico, it's Noche Buena - a night of celebration, family, and delicious food like Bacalao and Ponche! Enjoy the final preparations for this magical night! 🇲🇽🇩🇪",
+    "title": "Eres mi primer pensamiento",
+    "content": "I loved building Legos",
     "imageUrl": "pics/15.jpeg"
   },
   {
     "day": 24,
     "type": "text",
-    "title": "¡Feliz Navidad! Merry Christmas! 🎄🎁",
+    "title": "Morgenliebe an Heiligabend",
     "content": "This is your main gift! Let yourself be surprised and enjoy the holidays. From Germany to Mexico - love knows no borders! Te quiero mucho! ❤️🇲🇽🇩🇪"
   }
 ]
