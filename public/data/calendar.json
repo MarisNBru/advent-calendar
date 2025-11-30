@@ -2,63 +2,63 @@
   {
     "day": 1,
     "type": "text",
-    "title": "Buenos días mi amor",
+    "title": "Good morning mi amor",
     "content": "Hola mi amor, this is the first day of 24 days filled with....ahhh sorry, I got distracted by the Christmas lights... Anyway, I wish you a wonderful Advent season full of joy, love, and cozy moments! Each day holds a special surprise for you.",
     "imageUrl": "pics/1.jpeg"
   },
   {
     "day": 2,
     "type": "image",
-    "title": "Guten Morgen mein Herz",
+    "title": "Einen wunderschönen guten Morgen",
     "content": "I have some hidden talents i never told you...",
     "imageUrl": "pics/2.jpeg"
   },
   {
     "day": 3,
     "type": "image",
-    "title": "Morning sunshine, beautiful",
+    "title": "Good morning, beautiful",
     "content": "Si have had hair but they just really blonde...",
     "imageUrl": "pics/20.jpg"
   },
   {
     "day": 4,
     "type": "image",
-    "title": "Eres mi luz hoy",
+    "title": "Buenos días mi amor",
     "content": "Idk exactly which birthday this is from...but i was pretty young",
     "imageUrl": "pics/4.jpeg"
   },
   {
     "day": 5,
     "type": "text",
-    "title": "Wach auf, Liebe",
+    "title": "Heute ist ein guter Tag",
     "content": "In our family we have to close our eyes when we come to the table and open them again when we sit down. So we see the cake and the gifts at the same time. Happy Maris",
     "imageUrl": "pics/3.jpeg"
   },
   {
     "day": 6,
     "type": "image",
-    "title": "Sweet morning, mi vida",
+    "title": "Buenos días, cariño",
     "content": "I told you about my school project where i baked a cake...I was kinda proud of it",
     "imageUrl": "pics/6.jpeg"
   },
   {
     "day": 7,
     "type": "image",
-    "title": "Frühstück fürs Herz",
+    "title": "Guten Morgen, mein Herz",
     "content": "I think that for a photo of me for my ID card...DIOSMIO i had so many different hairstyles",
     "imageUrl": "pics/7.jpeg"
   },
   {
     "day": 8,
     "type": "image",
-    "title": "You are my morning calm",
+    "title": "Good morning, my love",
     "content": "Since day one, loved to sleep the whole day",
     "imageUrl": "pics/8.jpeg"
   },
   {
     "day": 9,
     "type": "gallery",
-    "title": "Hola corazón lindo",
+    "title": "Hola corazón, buen día",
     "content": "I mean yea...i loved quark",
     "galleryImages": [
       "pics/Essen-1.jpg",
@@ -71,21 +71,21 @@
   {
     "day": 10,
     "type": "image",
-    "title": "Sanfter Morgen für dich",
+    "title": "Guten Morgen, Sonnenschein",
     "content": "Sleeping with Matti i think...",
     "imageUrl": "pics/10.jpeg"
   },
   {
     "day": 11,
     "type": "image",
-    "title": "My warm morning hug",
+    "title": "Morning hugs for you",
     "content": "Really rare i did my homework hahaha",
     "imageUrl": "pics/9.jpeg"
   },
   {
     "day": 12,
     "type": "image",
-    "title": "Guten Morgen schöne Seele",
+    "title": "Einen guten Morgen, schöne Seele",
     "content": "I kinda look like laurin...",
     "imageUrl": "pics/17.jpg"
   },
@@ -99,7 +99,7 @@
   {
     "day": 14,
     "type": "gallery",
-    "title": "Hello love, gentle day",
+    "title": "Hello love, good morning",
     "content": "I loved going to the animal park, especially to the goats lol",
     "galleryImages": [
       "pics/Tierpark-1.jpg",
@@ -110,7 +110,7 @@
   {
     "day": 15,
     "type": "gallery",
-    "title": "Strahlender Morgen liebste",
+    "title": "Guten Morgen, du Wunder",
     "content": "My first birthday...now i'm feeling old",
     "galleryImages": [
       "pics/first-bday-1.jpg",
@@ -120,35 +120,35 @@
   {
     "day": 16,
     "type": "image",
-    "title": "Hoy brillan tus ojos",
+    "title": "Hoy es un buen día",
     "content": "I think it was after Christmas and i got some LEEEGGGOOOOoo",
     "imageUrl": "pics/16.jpeg"
   },
   {
     "day": 17,
     "type": "image",
-    "title": "Dein Lächeln macht den Tag",
+    "title": "Guten Morgen, ich liebe dich",
     "content": "Even with 1 already a playboy",
     "imageUrl": "pics/18.jpg"
   },
   {
     "day": 18,
     "type": "image",
-    "title": "Morning cuddle promise",
+    "title": "Good morning, mi vida",
     "content": "Mi mami and me",
     "imageUrl": "pics/19.jpg"
   },
   {
     "day": 19,
     "type": "image",
-    "title": "Du bist mein erster Gedanke",
+    "title": "Guten Morgen, erster Gedanke",
     "content": "My favorite hobby...backing",
     "imageUrl": "pics/5.jpeg"
   },
   {
     "day": 20,
     "type": "image",
-    "title": "Tu sonrisa despierta todo",
+    "title": "Tu sonrisa inicia el día",
     "content": "CWith my grandparents...my grandma looks so like my dad here",
     "imageUrl": "pics/Familie.jpg"
   },
@@ -166,7 +166,7 @@
   {
     "day": 22,
     "type": "gallery",
-    "title": "Liebe weckt den Tag",
+    "title": "Liebe weckt den Morgen",
     "content": "Jaaa...first and last yet time i looked so fancy",
     "galleryImages": [
       "pics/maris-tanzkurs-abschlussball20.jpg",
@@ -184,8 +184,8 @@
   {
     "day": 24,
     "type": "text",
-    "title": "Morgenliebe an Heiligabend",
-    "content": "This is your main gift! Let yourself be surprised and enjoy the holidays. From Germany to Mexico - love knows no borders! Te quiero mucho! ❤️🇲🇽🇩🇪"
+    "title": "Frohe Weihnachten, guten Morgen",
+    "content": "This...is the last door. Enjoy it!"
     ,
     "videoUrl": "https://www.youtube.com/embed/eQ0mJGv-qhI"
   }
