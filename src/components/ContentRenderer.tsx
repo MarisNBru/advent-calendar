@@ -383,6 +383,31 @@ export default function ContentRenderer({ entry }: ContentRendererProps) {
           </audio>
         </motion.div>
       )}
+
+      {entry.videoUrl && (
+        <motion.div
+          className="mt-6 p-5 rounded-2xl"
+          style={{
+            background: `linear-gradient(120deg, rgba(248, 240, 228, 0.9), rgba(233, 218, 198, 0.9))`,
+            border: `1px solid ${contentPalette.parchmentDeep}`,
+            boxShadow: 'inset 0 1px 8px rgba(0,0,0,0.1)'
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <p className="text-sm mb-3 font-medium" style={{ color: contentPalette.muted }}>Watch Video:</p>
+          <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              className="w-full h-full"
+              src={entry.videoUrl}
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }

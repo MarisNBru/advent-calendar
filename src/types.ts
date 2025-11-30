@@ -7,6 +7,7 @@ export interface CalendarEntry {
   galleryImages?: string[];
   linkUrl?: string;
   audioUrl?: string;
+  videoUrl?: string;
   voucherCode?: string;
   voucherValidUntil?: string;
 }
