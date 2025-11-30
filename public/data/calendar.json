@@ -37,7 +37,7 @@
   {
     "day": 6,
     "type": "image",
-    "title": "Buenos días, cariño",
+    "title": "Buenos días, mi niña",
     "content": "I told you about my school project where i baked a cake...I was kinda proud of it",
     "imageUrl": "pics/6.jpeg"
   },
@@ -71,7 +71,7 @@
   {
     "day": 10,
     "type": "image",
-    "title": "Guten Morgen, Sonnenschein",
+    "title": "Guten Morgen, fühl dich geküsst :*",
     "content": "Sleeping with Matti i think...",
     "imageUrl": "pics/10.jpeg"
   },
@@ -85,14 +85,14 @@
   {
     "day": 12,
     "type": "image",
-    "title": "Einen guten Morgen, schöne Seele",
+    "title": "Einen guten Morgen, schöne Frau",
     "content": "I kinda look like laurin...",
     "imageUrl": "pics/17.jpg"
   },
   {
     "day": 13,
     "type": "image",
-    "title": "Besos y café para ti",
+    "title": "Besitos to you",
     "content": "Right there I did the pallette bed i have rn on my balcony",
     "imageUrl": "pics/13.jpeg"
   },
@@ -141,7 +141,7 @@
   {
     "day": 19,
     "type": "image",
-    "title": "Guten Morgen, erster Gedanke",
+    "title": "Guten Morgen, mein Kuschelbär",
     "content": "My favorite hobby...backing",
     "imageUrl": "pics/5.jpeg"
   },
@@ -166,7 +166,7 @@
   {
     "day": 22,
     "type": "gallery",
-    "title": "Liebe weckt den Morgen",
+    "title": "Habe einen schönen Tag, mein Engel",
     "content": "Jaaa...first and last yet time i looked so fancy",
     "galleryImages": [
       "pics/maris-tanzkurs-abschlussball20.jpg",
@@ -184,7 +184,7 @@
   {
     "day": 24,
     "type": "text",
-    "title": "Frohe Weihnachten, guten Morgen",
+    "title": "Frohe Weihnachten und einen wunderschönen guten Morgen",
     "content": "This...is the last door. Enjoy it!"
     ,
     "videoUrl": "https://www.youtube.com/embed/eQ0mJGv-qhI"
