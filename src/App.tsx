@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, MotionConfig } from 'framer-motion';
 import { CalendarEntry } from './types';
 import { useAdventState } from './hooks/useAdventState';
+import { usePerformanceMode } from './hooks/usePerformanceMode';
 import DoorCard from './components/DoorCard';
 import DayModal from './components/DayModal';
 import Header from './components/Header';
@@ -22,6 +23,9 @@ function App() {
   const [secretMode, setSecretMode] = useState(false);
 
   const { isDoorOpened, toggleDoor } = useAdventState();
+  const { isLowPowerMode } = usePerformanceMode();
+  const shouldRenderSnowfall = !isLowPowerMode;
+  const backgroundAttachment = isLowPowerMode ? 'scroll' : 'fixed';
 
   useEffect(() => {
     // Check for preview mode in URL
@@ -108,7 +112,7 @@ function App() {
         backgroundImage: `url(${FIREPLACE_BG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment
       }}>
         <div className="text-center p-10 rounded-3xl" style={{
           background: 'rgba(255, 248, 220, 0.95)',
@@ -149,7 +153,7 @@ function App() {
         backgroundImage: `url(${FIREPLACE_BG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment
       }}>
         <div className="text-center max-w-md p-12 rounded-3xl" style={{
           background: 'rgba(255, 248, 220, 0.95)',
@@ -180,15 +184,16 @@ function App() {
 
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <div className="min-h-screen relative overflow-hidden" style={{
-        backgroundImage: `url(${FIREPLACE_BG})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}>
-        <Snowfall />
-        <div className="container mx-auto px-4 py-8 relative z-10">
-          <Header />
+      <MotionConfig reducedMotion={isLowPowerMode ? 'always' : 'user'}>
+        <div className="min-h-screen relative overflow-hidden" style={{
+          backgroundImage: `url(${FIREPLACE_BG})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment
+        }}>
+          {shouldRenderSnowfall && <Snowfall />}
+          <div className="container mx-auto px-4 py-8 relative z-10">
+            <Header />
 
           {(previewMode || secretMode) && (
             <motion.div
@@ -279,6 +284,7 @@ function App() {
           onClose={handleCloseModal}
         />
       </div>
+    </MotionConfig>
     </Router>
   );
 }
