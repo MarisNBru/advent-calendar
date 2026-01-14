@@ -18,15 +18,8 @@ export function getCurrentMonth(): number {
 }
 
 export function isDoorUnlocked(day: number, previewMode: boolean = false): boolean {
-  if (previewMode) return true;
-  
-  const currentMonth = getCurrentMonth();
-  const currentDay = getCurrentDay();
-  
-  // Only unlock in December
-  if (currentMonth !== 12) return false;
-  
-  return day <= currentDay;
+  // All doors are always unlocked, regardless of date or preview mode
+  return true;
 }
 
 export function formatDate(date: Date): string {
