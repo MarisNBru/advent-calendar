@@ -17,7 +17,7 @@ export function getCurrentMonth(): number {
   return berlinDate.getMonth() + 1; // 1-based
 }
 
-export function isDoorUnlocked(day: number, previewMode: boolean = false): boolean {
+export function isDoorUnlocked(_day: number, _previewMode: boolean = false): boolean {
   // All doors are always unlocked, regardless of date or preview mode
   return true;
 }

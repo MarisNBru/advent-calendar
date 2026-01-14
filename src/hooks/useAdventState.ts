@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-
-const STORAGE_KEY = 'advent-calendar-opened-doors';
+import { useState } from 'react';
 
 export function useAdventState() {
   const [openedDoors] = useState<Set<number>>(() => {
